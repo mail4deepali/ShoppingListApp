@@ -1,0 +1,30 @@
+<form novalidate #form=ngForm (submit)="onSubmit(form)">
+    <input type="hidden" name="itemID" value="service.formData.itemId" />
+
+    <div class="formgroup">
+        <label>Item Name</label>
+        <input type="text" class="form-control form-control-lg" placeholder="Full Name" 
+        name="itemName" #itemName="ngModel" [(ngModel)]="service.formData.itemName" 
+        required [class.invalid]="itemName.invalid && itemName.touched" />
+    </div>
+
+    <div class="formgroup">
+        <label>Shop Name</label>
+        <input type="text" class="form-control form-control-lg" placeholder="Shop Name" 
+        name="shopName" #shopName="ngModel" [(ngModel)]="service.formData.shopName" 
+        required [class.invalid]="shopName.invalid && shopName.touched" />
+    </div>
+
+    <div class="formgroup">
+        <label>Date Added</label>
+        <input type="text" class="form-control form-control-lg" placeholder="MM/YY/DD" 
+        name="dateAdded" #dateAdded="ngModel" [(ngModel)]="service.formData.dateAdded" 
+        maxlength="8" minlength="8" required [class.invalid]="dateAdded.invalid && dateAdded.touched" />
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
+    </div>
+
+    
+    </form>

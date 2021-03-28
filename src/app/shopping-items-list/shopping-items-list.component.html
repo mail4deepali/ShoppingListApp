@@ -1,0 +1,30 @@
+<div class="jumbtron py-3">
+    <h1 class="display-4 text-center">Shopping List Item</h1>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <app-shopping-item-form></app-shopping-item-form>
+    </div>
+    <div class="col-md-6">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Item Name</th>
+                    <th>Shop Name</th>
+                    <th>Date Added</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of service.list">
+                    <td (click)="PopulateForm(item)">{{item.itemName}}</td>
+                    <td (click)="PopulateForm(item)">{{item.shopName}}</td>
+                    <td (click)="PopulateForm(item)">{{item.dateAdded}}</td>
+                    <td>
+                        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(item.itemId)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
