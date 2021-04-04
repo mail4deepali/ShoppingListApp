@@ -8,7 +8,7 @@ import { stringify } from '@angular/compiler/src/util';
   providedIn: 'root'
 })
 
-//service test
+//service change ShoppingListWithSwagger
 export class ShoppingListService {
 
   constructor(private http:HttpClient) { }
