@@ -7,6 +7,8 @@ import { stringify } from '@angular/compiler/src/util';
 @Injectable({
   providedIn: 'root'
 })
+
+// Test from main
 export class ShoppingListService {
 
   constructor(private http:HttpClient) { }
