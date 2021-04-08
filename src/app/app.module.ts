@@ -9,6 +9,9 @@ import { AppComponent } from './app.component';
 import { ShoppingItemsListComponent } from './shopping-items-list/shopping-items-list.component';
 import { ShoppingItemFormComponent } from './shopping-items-list/shopping-item-form/shopping-item-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import {ShoppingListClient} from './shared/api';
+import {API_BASE_URL} from 'src/app/shared/api';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    ShoppingListClient,
+    {provide: API_BASE_URL, useValue:environment.appBaseURL}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
